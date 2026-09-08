@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anshi Turns 14 🎂</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap');
+:root{--pink:#ff4f87;--rose:#ff7aa8;--cream:#fff8f4;--ink:#241722;--gold:#ffc857}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 20% 10%,#ffe0eb,transparent 35%),radial-gradient(circle at 90% 30%,#ffe9bf,transparent 30%),var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#ff4f87 1px,transparent 1px);background-size:28px 28px}
+nav{position:fixed;z-index:20;top:18px;left:50%;transform:translateX(-50%);width:min(92%,900px);display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border:1px solid #ffffffb8;background:#ffffffaa;backdrop-filter:blur(16px);border-radius:999px;box-shadow:0 10px 35px #9c466326}
+nav b{color:var(--pink)}nav a{text-decoration:none;color:var(--ink);font-size:13px;font-weight:700;margin-left:18px}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:110px 20px 70px;position:relative}
+.hero-inner{max-width:950px}.eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:12px;font-weight:700;color:#a64c68}
+h1{font:800 clamp(62px,13vw,150px)/.88 "Playfair Display",serif;margin:12px 0;background:linear-gradient(100deg,#ed2f70,#ff7a9d,#ffb52f);-webkit-background-clip:text;color:transparent}
+.sub{font-size:clamp(17px,3vw,24px);max-width:700px;margin:20px auto;line-height:1.6}
+.date{display:inline-block;padding:9px 18px;border-radius:999px;background:#241722;color:white;font-weight:700}
+.count{margin:30px auto;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.time{min-width:90px;padding:16px;border-radius:22px;background:#fff;border:1px solid #ffd1df;box-shadow:0 10px 30px #ff4f8720}
+.time strong{display:block;font-size:32px;color:var(--pink)}.time span{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.cta{display:inline-block;margin-top:14px;padding:14px 22px;border-radius:999px;background:var(--pink);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 12px 30px #ff4f8748}
+section{width:min(1080px,92%);margin:0 auto;padding:90px 0}
+.section-title{text-align:center;font:800 clamp(35px,7vw,62px)/1.05 "Playfair Display",serif;margin:0 0 12px}
+.lead{text-align:center;max-width:650px;margin:0 auto 38px;color:#6d5963;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#ffffffc7;border:1px solid #fff;backdrop-filter:blur(12px);padding:25px;border-radius:28px;box-shadow:0 18px 45px #6e304014;transform:translateY(0);transition:.3s}
+.card:hover{transform:translateY(-8px) rotate(-1deg)}.emoji{font-size:40px}.card h3{margin:12px 0 7px}.card p{color:#6d5963;line-height:1.55}
+.timeline{display:grid;gap:16px}.moment{display:grid;grid-template-columns:90px 1fr;gap:20px;align-items:center;background:#fff;border-radius:25px;padding:20px;border-left:5px solid var(--pink);box-shadow:0 12px 30px #7d315814}
+.moment .year{font-weight:800;color:var(--pink);font-size:18px;text-align:center}.moment p{margin:5px 0;color:#705c66}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.photo{min-height:190px;border-radius:25px;overflow:hidden;position:relative;background:linear-gradient(135deg,#ffd5e3,#fff1d0);display:grid;place-items:center;border:3px solid #fff;box-shadow:0 12px 25px #7d315814}.photo img{width:100%;height:100%;object-fit:cover;position:absolute}.photo span{z-index:1;font-size:42px;filter:drop-shadow(0 5px 10px #fff)}
+.music{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:#241722;color:white;border-radius:30px;padding:28px;box-shadow:0 20px 50px #24172235}.music p{color:#d9cbd0}.music button{border:0;background:var(--pink);color:white;padding:15px 19px;border-radius:50%;font-size:22px;cursor:pointer}
+.jokes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.joke{padding:24px;border-radius:25px;background:#fff;box-shadow:0 12px 30px #7d315814;font-weight:700}.joke small{display:block;margin-top:8px;color:#9b7b88;font-weight:400}
+.final{text-align:center;padding-bottom:120px}.final h2{font:800 clamp(44px,8vw,80px) "Playfair Display",serif}.signature{font-size:18px;color:#80616d}
+footer{text-align:center;padding:25px;color:#8b707b;font-size:12px}
+.float{position:fixed;pointer-events:none;z-index:99;font-size:25px;animation:float 1.8s ease-out forwards}
+@keyframes float{0%{transform:translate(0,0) scale(.6) rotate(0);opacity:1}100%{transform:translate(var(--x),-130px) scale(1.5) rotate(25deg);opacity:0}}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}
+@media(max-width:750px){nav a{display:none}.cards,.jokes{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.photo{min-height:150px}.music{grid-template-columns:1fr}.moment{grid-template-columns:65px 1fr}}
+</style>
+</head>
+<body>
+<nav><b>ANSHI ✨</b><div><a href="#moments">Moments</a><a href="#photos">Photos</a><a href="#music">Music</a></div></nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">08 September 2026 • Emergency Birthday Broadcast 🚨</div>
+    <h1>ANSHI<br>IS 14!</h1>
+    <p class="sub">Aaj se officially <b>14 saal ki nautanki</b>. 👑<br>And yes, bhai ne finally ek website bana hi di. You're welcome.</p>
+    <span class="date">🎂 Birthday • 09 September 2026</span>
+    <div class="count" id="countdown">
+      <div class="time"><strong id="d">00</strong><span>Days</span></div>
+      <div class="time"><strong id="h">00</strong><span>Hours</span></div>
+      <div class="time"><strong id="m">00</strong><span>Minutes</span></div>
+      <div class="time"><strong id="s">00</strong><span>Seconds</span></div>
+    </div>
+    <div id="birthdayMsg" style="display:none;font:800 42px 'Playfair Display';color:var(--pink)">IT'S UR BDAYYYYY 🎉🎂</div>
+    <a class="cta" href="#moments">Enter the chaos ↓</a>
+  </div>
+</header>
+
+<section id="moments" class="reveal">
+<h2 class="section-title">14 years of being Anshi</h2><p class="lead">Ek chhoti si ladki se lekar full-time drama department tak. Character development is insane.</p>
+<div class="cards">
+<div class="card"><div class="emoji">🧁</div><h3>Level 14 Unlocked</h3><p>New age, same bakwaas. Ab officially “teenager pro max” ho.</p></div>
+<div class="card"><div class="emoji">👑</div><h3>Princess? Haan.</h3><p>Par ghar ki asli VIP hone ka contract renew nahi hua hai. Bhai abhi board member hai.</p></div>
+<div class="card"><div class="emoji">💖</div><h3>Bhai ka verdict</h3><p>Tu annoying hai. Kabhi-kabhi bahut zyada. But honestly, life tere bina boring hoti.</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<h2 class="section-title">Important Historical Events™</h2>
+<div class="timeline">
+<div class="moment"><div class="year">2012</div><div><b>Plot twist.</b><p>Anshi naam ki ek chhoti si problem… I mean, blessing… entered the family.</p></div></div>
+<div class="moment"><div class="year">2018</div><div><b>Chaos intensifies.</b><p>Volume: unlimited. Logic: optional.</p></div></div>
+<div class="moment"><div class="year">2024</div><div><b>Main character era.</b><p>Photos, reels, attitude — sab HD mein.</p></div></div>
+<div class="moment"><div class="year">2026</div><div><b>LEVEL 14.</b><p>Congratulations. Ab tumhari “main badi ho gayi hoon” wali speeches officially valid hain. Thodi.</p></div></div>
+</div>
+</section>
+
+<section id="photos" class="reveal">
+<h2 class="section-title">The Anshi Archives 📸</h2>
+<p class="lead">Apni photos yahan daal dena: <b>photo1.jpg, photo2.jpg, photo3.jpg, photo4.jpg</b> — same folder mein. Ye boxes automatically fill ho jayenge.</p>
+<div class="gallery">
+<div class="photo"><img src="photo1.jpg" onerror="this.style.display='none'"><span>📸</span></div>
+<div class="photo"><img src="photo2.jpg" onerror="this.style.display='none'"><span>🌸</span></div>
+<div class="photo"><img src="photo3.jpg" onerror="this.style.display='none'"><span>✨</span></div>
+<div class="photo"><img src="photo4.jpg" onerror="this.style.display='none'"><span>💗</span></div>
+</div>
+</section>
+
+<section id="music" class="reveal">
+<h2 class="section-title">Birthday Soundtrack 🎵</h2><p class="lead">Apna favourite song file bhi same folder mein <b>birthday-song.mp3</b> naam se rakh dena.</p>
+<div class="music"><div><h3>🎧 Anshi FM — LIVE</h3><p>Press play. Volume responsibly. Neighbours ki koi guarantee nahi.</p><audio id="audio" src="birthday-song.mp3"></audio></div><button id="play">▶</button></div>
+</section>
+
+<section class="reveal">
+<h2 class="section-title">Bhai ki Certified Bakwaas™</h2>
+<div class="jokes">
+<div class="joke">“Tumko aaj ke din naali se uthake laaye the.”<small>— Family lore, probably fake, but funny.</small></div>
+<div class="joke">“14 ki ho gayi? Achha. Ab room saaf karne ka subscription bhi activate kar dein?”<small>— Bhai Industries</small></div>
+<div class="joke">“Gift chahiye? Website dekho. Itni coding ke baad emotional damage free mein mil raha hai.”<small>— Financially responsible brother</small></div>
+<div class="joke">“Mummy ko mat batana ki maine tumhe princess bola. Reputation ka sawaal hai.”<small>— Confidential</small></div>
+</div>
+</section>
+
+<section class="final reveal">
+<h2>Happy Birthday,<br>Anshi! 🎂💖</h2>
+<p class="signature">14 looks good on you. Stay crazy, stay kind, keep smiling.<br>— Your irritating but legendary bhai 😎</p>
+</section>
+<footer>Made with too much effort, zero sleep & unlimited sibling love • 2026</footer>
+
+<script>
+const target=new Date("2026-09-09T00:00:00+05:30");
+function tick(){
+ const now=new Date(), diff=target-now;
+ if(diff<=0){document.getElementById("countdown").style.display="none";document.getElementById("birthdayMsg").style.display="block";return}
+ const sec=Math.floor(diff/1000);
+ document.getElementById("d").textContent=String(Math.floor(sec/86400)).padStart(2,"0");
+ document.getElementById("h").textContent=String(Math.floor(sec%86400/3600)).padStart(2,"0");
+ document.getElementById("m").textContent=String(Math.floor(sec%3600/60)).padStart(2,"0");
+ document.getElementById("s").textContent=String(sec%60).padStart(2,"0");
+} tick(); setInterval(tick,1000);
+
+const audio=document.getElementById("audio"),play=document.getElementById("play");
+play.onclick=()=>{if(audio.paused){audio.play();play.textContent="❚❚"}else{audio.pause();play.textContent="▶"}};
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
+
+const bits=["💖","💗","💕","💓","💘","✨","🌹","❤️","🩷","💫"];
+document.addEventListener("pointerdown",e=>{
+ for(let i=0;i<5;i++){
+  const el=document.createElement("span");el.className="float";el.textContent=bits[Math.floor(Math.random()*bits.length)];
+  el.style.left=e.clientX+(Math.random()*35-17)+"px";el.style.top=e.clientY+(Math.random()*20-10)+"px";
+  el.style.setProperty("--x",(Math.random()*150-75)+"px");document.body.appendChild(el);
+  setTimeout(()=>el.remove(),1800);
+ }
+});
+</script>
+</body>
+</html>
