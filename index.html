@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ANSHI </title>
+<meta name="theme-color" content="#120b17">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+:root{--bg:#100914;--card:#1a101c;--pink:#ff4f91;--pink2:#ff9fc2;--gold:#ffd166;--white:#fff8fb;--muted:#bdaab7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 15% 10%,#64244255,transparent 30%),radial-gradient(circle at 85% 35%,#ff4f9122,transparent 28%),radial-gradient(circle at 50% 90%,#ffd16618,transparent 30%)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.12;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
+*{scrollbar-width:thin;scrollbar-color:#ff4f91 #160d19}
+.loader{position:fixed;inset:0;z-index:1000;background:#100914;display:grid;place-items:center;transition:1s}.loader.hide{opacity:0;pointer-events:none}.loader div{text-align:center}.loader .orb{font-size:58px;animation:pulse 1s infinite}.loader p{color:var(--muted);letter-spacing:3px;text-transform:uppercase;font-size:11px}
+@keyframes pulse{50%{transform:scale(1.18)}}
+nav{position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);width:min(94%,980px);padding:12px 16px;border:1px solid #ffffff18;border-radius:999px;background:#120c18bb;backdrop-filter:blur(18px);display:flex;justify-content:space-between;align-items:center;box-shadow:0 15px 50px #0008}
+nav b{letter-spacing:2px;color:var(--pink2)}nav a{color:#e9dce4;text-decoration:none;font-size:12px;font-weight:700;margin-left:17px}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:110px 18px 70px;position:relative}.hero-inner{max-width:1000px}
+.kicker{font-size:11px;letter-spacing:5px;color:var(--gold);font-weight:800;text-transform:uppercase}
+h1{font:800 clamp(70px,15vw,175px)/.82 "Playfair Display",serif;margin:22px 0 20px;letter-spacing:-5px;background:linear-gradient(110deg,#fff,#ff9fc2 45%,#ffd166);-webkit-background-clip:text;color:transparent;text-shadow:0 0 60px #ff4f9133}
+.hero p{max-width:680px;margin:auto;color:#d6c4cf;font-size:clamp(16px,2.5vw,21px);line-height:1.7}.pill{display:inline-block;margin-top:25px;padding:9px 16px;border:1px solid #ff9fc255;background:#ff4f9114;border-radius:999px;color:#ffdce8;font-weight:800}
+.count{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px 0}.unit{width:92px;padding:14px 8px;border-radius:20px;background:#ffffff08;border:1px solid #ffffff12}.unit strong{font-size:30px;color:#fff;display:block}.unit small{color:#9f8b98;text-transform:uppercase;letter-spacing:2px;font-size:9px}
+#birthday{display:none;font:800 clamp(38px,8vw,85px) "Playfair Display",serif;color:var(--pink2);animation:zoom .8s both}.bday-on #birthday{display:block}.bday-on .count{display:none}@keyframes zoom{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.btn{border:0;cursor:pointer;padding:14px 21px;border-radius:999px;background:var(--pink);color:white;font-weight:800;box-shadow:0 10px 35px #ff4f9150;text-decoration:none;display:inline-block;margin-top:5px}.btn.alt{background:#ffffff0c;border:1px solid #ffffff1f;box-shadow:none}
+.scroll{display:block;margin-top:50px;color:#8d7986;font-size:10px;letter-spacing:3px;text-transform:uppercase;animation:bob 1.5s infinite}@keyframes bob{50%{transform:translateY(7px)}}
+section{width:min(1080px,92%);margin:auto;padding:100px 0}.tag{text-align:center;color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase;font-weight:800}.title{text-align:center;font:800 clamp(38px,7vw,70px)/1.05 "Playfair Display",serif;margin:10px 0 12px}.lead{text-align:center;max-width:670px;margin:0 auto 38px;color:var(--muted);line-height:1.7}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.glass{padding:25px;border-radius:28px;background:linear-gradient(145deg,#ffffff0d,#ffffff03);border:1px solid #ffffff12;box-shadow:0 25px 70px #0003;transition:.35s}.glass:hover{transform:translateY(-8px);border-color:#ff4f9140}.icon{font-size:40px}.glass h3{margin:14px 0 7px}.glass p{color:var(--muted);line-height:1.6;margin:0}
+.timeline{display:grid;gap:14px}.event{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:20px;border-radius:23px;background:#ffffff06;border:1px solid #ffffff0c}.event b{color:var(--pink2)}.event p{margin:5px 0 0;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.photo{height:235px;border-radius:25px;overflow:hidden;position:relative;background:linear-gradient(135deg,#341728,#241323);border:2px solid #fff1;cursor:pointer}.photo img{width:100%;height:100%;object-fit:cover;transition:.5s}.photo:hover img{transform:scale(1.08)}.photo:after{content:"TAP TO FEEL THE MAGIC ✦";position:absolute;left:12px;bottom:12px;font-size:8px;letter-spacing:1px;background:#0009;padding:7px 9px;border-radius:99px;color:#fff}.fallback{display:grid;place-items:center;height:100%;font-size:45px}
+.music{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:28px;border-radius:30px;background:linear-gradient(135deg,#271321,#171019);border:1px solid #ffffff12}.vinyl{width:80px;height:80px;border-radius:50%;background:repeating-radial-gradient(circle,#21151e 0 3px,#09070a 4px 7px);display:grid;place-items:center;float:left;margin-right:20px;animation:spin 5s linear infinite;animation-play-state:paused}.playing .vinyl{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}.vinyl:after{content:"✦";width:22px;height:22px;background:var(--pink);border-radius:50%;display:grid;place-items:center;font-size:10px}.music h3{margin:5px 0}.music p{color:var(--muted)}.play{width:58px;height:58px;border:0;border-radius:50%;background:var(--pink);color:#fff;font-size:20px;cursor:pointer}
+.roast{display:grid;place-items:center;text-align:center;padding:40px;border-radius:30px;background:#ffffff06;border:1px solid #ffffff12}.roastText{font:700 clamp(20px,4vw,34px) "Playfair Display",serif;max-width:760px;min-height:80px;display:grid;place-items:center}.roast button{margin-top:15px}
+.quiz{display:grid;gap:12px;max-width:720px;margin:auto}.q{padding:24px;border-radius:24px;background:#ffffff06;border:1px solid #ffffff12}.q h3{margin-top:0}.answers{display:flex;gap:9px;flex-wrap:wrap}.answers button{border:1px solid #ffffff18;background:#fff8;color:white;padding:11px 14px;border-radius:999px;cursor:pointer}.answers button:hover{background:#ff4f91}.result{text-align:center;color:var(--gold);font-weight:800;min-height:25px}
+.envelope{margin:auto;max-width:650px;text-align:center;cursor:pointer}.env{font-size:100px;filter:drop-shadow(0 15px 30px #ff4f9140);transition:.4s}.envelope:hover .env{transform:translateY(-8px) rotate(-2deg)}.letter{display:none;padding:30px;border-radius:26px;background:#fff;color:#291923;text-align:left;line-height:1.8;box-shadow:0 25px 70px #0006}.letter.show{display:block;animation:slide .6s both}@keyframes slide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.final{text-align:center;padding-bottom:120px}.final h2{font:800 clamp(45px,9vw,92px) "Playfair Display",serif;margin:10px 0;background:linear-gradient(90deg,#fff,#ff9fc2,#ffd166);-webkit-background-clip:text;color:transparent}.sig{color:var(--muted);line-height:1.8}
+.reveal{opacity:0;transform:translateY(30px);transition:.8s}.reveal.show{opacity:1;transform:none}
+.particle{position:fixed;pointer-events:none;z-index:90;font-size:24px;animation:particle 1.7s ease-out forwards}@keyframes particle{to{transform:translate(var(--x),-150px) rotate(40deg) scale(1.5);opacity:0}}
+.fire{position:fixed;z-index:80;pointer-events:none;width:5px;height:5px;border-radius:50%;background:#fff;animation:fire 1s ease-out forwards;box-shadow:0 0 12px 3px #fff}@keyframes fire{to{transform:translate(var(--x),var(--y));opacity:0}}
+@media(max-width:760px){nav a{display:none}.grid3{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.photo{height:180px}.music{grid-template-columns:1fr}.event{grid-template-columns:60px 1fr}}
+</style>
+</head>
+<body>
+<div class="loader" id="loader"><div><div class="orb">🎂</div><p>Loading Anshi.exe…</p></div></div>
+
+<nav><b>ANSHI </b><div><a href="#story">STORY</a><a href="#photos">PHOTOS</a><a href="#music">MUSIC</a><a href="#secret">SECRET</a></div></nav>
+
+<header class="hero">
+<div class="hero-inner">
+<div class="kicker">09 September 2026 • Birthday Protocol Activated</div>
+<h1>ANSHI<br>LEVEL 14</h1>
+<p>Ek normal birthday website banani thi… phir socha <b>“normal kyun?”</b> 😭<br>So here we are.</p>
+<div class="pill">🎂 OFFICIALLY 14 ON 09.09.2026</div>
+<div class="count" id="count">
+<div class="unit"><strong id="days">00</strong><small>Days</small></div><div class="unit"><strong id="hours">00</strong><small>Hours</small></div><div class="unit"><strong id="mins">00</strong><small>Minutes</small></div><div class="unit"><strong id="secs">00</strong><small>Seconds</small></div>
+</div>
+<div id="birthday">IT'S UR BDAYYYYY 🎉</div>
+<a class="btn" href="#story">Enter the Anshi Universe ↓</a>
+<span class="scroll">scroll • scroll • scroll</span>
+</div>
+</header>
+
+<section id="story" class="reveal">
+<div class="tag">CASE FILE #14</div><h2 class="title">The Legend So Far.</h2><p class="lead">14 saal. Unlimited memories. Aur bhai ko irritate karne ka experience level: expert.</p>
+<div class="grid3">
+<div class="glass"><div class="icon">👑</div><h3>VIP Status</h3><p>Ghar mein special treatment milta hai. Evidence available nahi hai, par confidence full hai.</p></div>
+<div class="glass"><div class="icon">⚡</div><h3>Chaos Energy</h3><p>Battery 100%, volume 200%, patience of everyone else: 3%.</p></div>
+<div class="glass"><div class="icon">💗</div><h3>Actual Truth</h3><p>Roasting asides , mumma ko thank you bolna abhi, ki thanks , aap uthake le aayi mujhe 😕🎀</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="tag">ARCHIVE</div><h2 class="title">14 Years. 4 Milestones.</h2>
+<div class="timeline">
+<div class="event"><b>2012</b><div><strong>THE ARRIVAL 🚨</strong><p>Anshi entered the family. Peace negotiations failed shortly afterwards.</p></div></div>
+<div class="event"><b>2014</b><div><strong>CHAOS PHASE</strong><p>Volume increased. Questions multiplied. Bhai's workload doubled.</p></div></div>
+<div class="event"><b>2024</b><div><strong>MAIN CHARACTER ARC ✨</strong><p>Photos, confidence, opinions — all upgraded to HD.</p></div></div>
+<div class="event"><b>2026</b><div><strong>LEVEL 14 UNLOCKED 🎮</strong><p>New level. Same legendary personality. Bigger cake required.</p></div></div>
+</div>
+</section>
+
+<section id="photos" class="reveal">
+<div class="tag">MEMORY VAULT</div><h2 class="title">The Anshi Archives 📸</h2>
+<p class="lead"></p>
+<div class="gallery">
+<div class="photo"><img src="Photos/photo1.jpg" onerror="this.style.display='none'"><div class="fallback">🌸</div></div>
+<div class="photo"><img src="Photos/photo2.jpg" onerror="this.style.display='none'"><div class="fallback">📸</div></div>
+<div class="photo"><img src="Photos/photo3.jpg" onerror="this.style.display='none'"><div class="fallback">✨</div></div>
+<div class="photo"><img src="Photos/photo4.jpg" onerror="this.style.display='none'"><div class="fallback">💗</div></div>
+<div class="photo"><img src="Photos/photo5.jpg" onerror="this.style.display='none'"><div class="fallback">🦋</div></div>
+<div class="photo"><img src="Photos/photo6.jpg" onerror="this.style.display='none'"><div class="fallback">👑</div></div>
+</div>
+</section>
+
+<section id="music" class="reveal">
+<div class="tag">BIRTHDAY FM</div><h2 class="title">Press Play 🎧</h2><p class="lead"></p>
+<div class="music" id="musicBox"><div><div class="vinyl"></div><h3>ANSHI KE LIYE SPECIAL • 09.09.26</h3><p>SIRF EK GAANA </p><audio id="audio" src="Music/birthday-song.mp3"></audio></div><button class="play" id="play">▶</button></div>
+</section>
+
+<section class="reveal">
+<div class="tag">BHAI DEPARTMENT</div><h2 class="title">Certified Roast Generator 😂</h2>
+<div class="roast"><div class="roastText" id="roast">Click the button. Himmat hai toh.</div><button class="btn" id="roastBtn">ROAST ANSHI 🔥</button></div>
+</section>
+
+<section class="reveal">
+<div class="tag">TOP SECRET</div><h2 class="title">How Well Do You Know Anshi?</h2>
+<div class="quiz">
+<div class="q"><h3>Q1. Anshi ka default mode?</h3><div class="answers"><button data-a="no">Silent monk</button><button data-a="yes">Full bakbak</button><button data-a="no">Corporate CEO</button></div></div>
+<div class="q"><h3>Q2. Birthday pe sabse important?</h3><div class="answers"><button data-a="yes">Cake 🎂</button><button data-a="no">Tax return</button><button data-a="no">Early morning meeting</button></div></div>
+<div class="q"><h3>Q3. Bhai ki official job?</h3><div class="answers"><button data-a="yes">Annoy + Protect</button><button data-a="no">Personal ATM</button><button data-a="no">Chef 24/7</button></div></div>
+<div class="result" id="result"></div>
+</div>
+</section>
+
+<section id="secret" class="reveal">
+<div class="tag">OPEN ONLY IF YOU'RE ANSHI</div><h2 class="title">A Message From The Annoying One 💌</h2>
+<div class="envelope" id="env"><div class="env">💌</div><p class="lead">Tap the envelope.</p><div class="letter" id="letter">Dear Anshi,<br><br>Happy 14th birthday, boni. ❤️<br><br>Shukar manao ki uss din tunko dhaan mill ke bagal se uthake le aaye , verna chamaro ke yaha padi hoti abhi....<br><br>Shakal sudhaar lena iss saal , mai to hu nahi vaha reality check dene ke liye , koi achcha bole to dhyaan na dena 🥀<br><br>And haan… gift ke liye zyada expectations mat rakhna. Website bana di hai, budget khatam. 💀<br><br><b>Happy Birthday, Anshi. Chal bhot hogya ab... 🫶</b><br><br>— Your irritating but Legendary bhai</div></div>
+</section>
+
+<section class="final reveal">
+<div class="tag">END OF TRANSMISSION</div><h2>Happy Birthday,<br>Anshi! 🎂✨</h2>
+<p class="sig">09 • 09 • 2026<br>Fourteen years of you. Here's to many, many more. 💗</p>
+</section>
+<footer>Made with sibling love, unnecessary amounts of CSS & questionable humour • 2026</footer>
+
+<script>
+setTimeout(()=>document.getElementById("loader").classList.add("hide"),900);
+const target=new Date("2026-09-09T00:00:00+05:30");
+function tick(){
+ let x=target-new Date();
+ if(x<=0){document.body.classList.add("bday-on"); fireworks(); return}
+ let s=Math.floor(x/1000);
+ days.textContent=String(Math.floor(s/86400)).padStart(2,"0");
+ hours.textContent=String(Math.floor(s%86400/3600)).padStart(2,"0");
+ mins.textContent=String(Math.floor(s%3600/60)).padStart(2,"0");
+ secs.textContent=String(s%60).padStart(2,"0");
+}
+tick();setInterval(tick,1000);
+
+const audio=document.getElementById("audio"),box=document.getElementById("musicBox"),play=document.getElementById("play");
+play.onclick=()=>{if(audio.paused){audio.play();play.textContent="❚❚";box.classList.add("playing")}else{audio.pause();play.textContent="▶";box.classList.remove("playing")}};
+
+const roasts=[
+"14 saal ki ho gayi… maturity abhi bhi loading. ⏳",
+"Naale ke bagal se uthake laaye 🥀",
+"NASA ne kaha: itni energy ka source abhi tak nahi mila. 🚀",
+"Mobile ka net slow ho sakta hai, Anshi ki bakbak nahi. 💀",
+"Gift maangne mein PhD, dene mein attendance shortage. 🎁",
+"14/10 personality. 2/10 baat manna 😭",
+"Breaking news: Anshi is still not the favourite child. Allegedly. 📰"
+];
+roastBtn.onclick=()=>{roast.textContent=roasts[Math.floor(Math.random()*roasts.length)];burst(innerWidth/2,innerHeight*.65)};
+
+let score=0,answered=0;
+document.querySelectorAll(".answers button").forEach(b=>b.onclick=()=>{
+ if(b.dataset.a==="yes"){score++;b.style.background="#ff4f91"}else b.style.opacity=".5";
+ answered++; if(answered>=3) result.textContent=`Score: ${score}/3 • ${score===3?"Anshi certified! 🏆":"Bhai ko aur training chahiye. 😭"}`;
+});
+env.onclick=()=>letter.classList.toggle("show");
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
+
+const icons=["💖","💗","💕","💓","💘","✨","🌹","🩷","💫","🌸","⭐"];
+document.addEventListener("pointerdown",e=>{
+ for(let i=0;i<5;i++){let p=document.createElement("div");p.className="particle";p.textContent=icons[Math.floor(Math.random()*icons.length)];p.style.left=e.clientX+"px";p.style.top=e.clientY+"px";p.style.setProperty("--x",(Math.random()*180-90)+"px");document.body.appendChild(p);setTimeout(()=>p.remove(),1700)}
+});
+function burst(cx,cy){for(let i=0;i<30;i++){let f=document.createElement("i");f.className="fire";f.style.left=cx+"px";f.style.top=cy+"px";f.style.setProperty("--x",(Math.random()*500-250)+"px");f.style.setProperty("--y",(Math.random()*400-200)+"px");document.body.appendChild(f);setTimeout(()=>f.remove(),1000)}}
+function fireworks(){burst(innerWidth*.25,innerHeight*.35);setTimeout(()=>burst(innerWidth*.75,innerHeight*.3),300);setTimeout(()=>burst(innerWidth*.5,innerHeight*.2),600)}
+</script>
+</body>
+</html>
